@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-attrib"
+version = "0.1.0"
+description = "Measure declared AI involvement in any git repository: attribution rate, change radius, rework, and window comparison."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "马金栋" }]
+keywords = ["git", "ai", "code-review", "metrics", "developer-tooling"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["ruff>=0.4"]
+
+[project.scripts]
+ai-attrib = "ai_attrib.cli:main"
+
+[project.urls]
+Repository = "https://github.com/ma1833577561/ai-attrib"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
